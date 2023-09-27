@@ -3,8 +3,10 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "servo": "*",
+        "bluetooth": "*",
+        "pxt-cutebotpro": "github:elecfreaks/pxt-cutebot-pro#v1.0.55"
     },
     "files": [
         "main.blocks",
@@ -21,5 +23,16 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "blocksprj",
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "open": 1,
+                    "whitelist": 0,
+                    "security_level": null
+                }
+            }
+        }
+    }
 }
