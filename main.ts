@@ -1,9 +1,34 @@
-basic.forever(function () {
-    let data = ""
-    if (data == "f") {
-        pins.digitalWritePin(DigitalPin.P14, 1)
-        pins.digitalWritePin(DigitalPin.P15, 0)
-        pins.digitalWritePin(DigitalPin.P8, 1)
-        pins.digitalWritePin(DigitalPin.P16, 0)
-    }
-})
+enum RadioMessage {
+    message1 = 49434
+}
+if (input.buttonIsPressed(Button.A)) {
+    basic.showLeds(`
+        . # # # .
+        # . . . #
+        # # # # #
+        # . . . #
+        # . . . #
+        `)
+    servos.P0.run(100)
+}
+if (input.buttonIsPressed(Button.B)) {
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # # # # #
+        # . . . #
+        # # # # #
+        `)
+    servos.P1.run(100)
+}
+if (input.buttonIsPressed(Button.AB)) {
+    basic.showLeds(`
+        . . # . .
+        . # # # .
+        # . # . #
+        . . # . .
+        . . # . .
+        `)
+    servos.P0.run(100)
+    servos.P1.run(100)
+}
